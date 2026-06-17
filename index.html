@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projecto educativo sobre Angola — cultura, turismo, economia e tecnologia. Cadeira de Sistemas Operativos, ISPI 2026.">
+    <title>Angola — Uma Nação, Muitas Dimensões</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===================== CABEÇALHO HERO ===================== -->
+    <header id="topo">
+
+        <!-- Padrão SVG decorativo inspirado em capulana angolana -->
+        <div class="hero-pattern" aria-hidden="true"></div>
+
+        <div class="hero-content">
+
+            <!-- Bandeira angolana em SVG inline -->
+            <div class="flag-badge" aria-label="Bandeira de Angola">
+                <svg viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bandeira de Angola">
+                    <rect width="60" height="20" fill="#CC0000"/>
+                    <rect y="20" width="60" height="20" fill="#000"/>
+                    <g transform="translate(30,20)">
+                        <path d="M0,-11 L2.6,-3.4 L10.5,-3.4 L4.2,1.3 L6.5,8.5 L0,4 L-6.5,8.5 L-4.2,1.3 L-10.5,-3.4 L-2.6,-3.4 Z" fill="#FFCC00" transform="scale(0.85)"/>
+                        <path d="M-5,-7 Q0,2 5,-7" fill="none" stroke="#FFCC00" stroke-width="1.4"/>
+                        <rect x="-1" y="-2" width="2" height="7" fill="#FFCC00"/>
+                        <rect x="-4" y="3" width="8" height="1.5" fill="#FFCC00"/>
+                    </g>
+                </svg>
+            </div>
+
+            <p class="hero-eyebrow">República de Angola — Projecto Educativo 2026</p>
+            <h1>Angola<br><span class="hero-sub">Uma Nação,<br>Muitas Dimensões</span></h1>
+            <p class="hero-description">
+                Explore a riqueza cultural, o potencial turístico,
+                a economia e o avanço tecnológico de Angola,
+                o país do futuro no coração de África.
+            </p>
+
+            <div class="hero-stats" aria-label="Dados rápidos sobre Angola">
+                <div class="stat">
+                    <span class="stat-number">34,5M</span>
+                    <span class="stat-label">Habitantes</span>
+                </div>
+                <div class="stat-divider" aria-hidden="true"></div>
+                <div class="stat">
+                    <span class="stat-number">18</span>
+                    <span class="stat-label">Províncias</span>
+                </div>
+                <div class="stat-divider" aria-hidden="true"></div>
+                <div class="stat">
+                    <span class="stat-number">1975</span>
+                    <span class="stat-label">Independência</span>
+                </div>
+                <div class="stat-divider" aria-hidden="true"></div>
+                <div class="stat">
+                    <span class="stat-number">1,25M</span>
+                    <span class="stat-label">km² de área</span>
+                </div>
+            </div>
+
+            <button id="themeToggle" type="button" aria-label="Alternar tema">
+                <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                <span>Modo Escuro</span>
+            </button>
+
+        </div>
+
+        <!-- Scroll cue -->
+        <a href="#cultura" class="scroll-cue" aria-label="Rolar para o conteúdo">
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </a>
+
+    </header>
+
+    <!-- ===================== NAVEGAÇÃO ===================== -->
+    <nav role="navigation" aria-label="Menu principal">
+        <div class="nav-inner">
+            <span class="nav-brand" aria-hidden="true">AO</span>
+            <div class="nav-links">
+                <a href="#cultura"><i class="fa-solid fa-masks-theater" aria-hidden="true"></i> Cultura</a>
+                <a href="#turismo"><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i> Turismo</a>
+                <a href="#explorar"><i class="fa-solid fa-compass" aria-hidden="true"></i> Explorar</a>
+                <a href="#economia"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Economia</a>
+                <a href="#tecnologia"><i class="fa-solid fa-microchip" aria-hidden="true"></i> Tecnologia</a>
+                <a href="#sistemas-operativos"><i class="fa-solid fa-server" aria-hidden="true"></i> Sistemas Op.</a>
+                <a href="#participacao"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Participação</a>
+            </div>
+            <!-- Menu hamburger para mobile -->
+            <button id="menuToggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===================== CONTEÚDO PRINCIPAL ===================== -->
+    <main>
+
+        <!-- ====== SECÇÃO CULTURA ====== -->
+        <section id="cultura" class="content-section" aria-labelledby="cultura-titulo">
+
+            <div class="section-header">
+                <span class="section-eyebrow">
+                    <i class="fa-solid fa-masks-theater" aria-hidden="true"></i>
+                    Identidade
+                </span>
+                <h2 id="cultura-titulo">Cultura Angolana</h2>
+                <p class="section-lead">A expressão viva de um povo com raízes profundas e futuro vibrante.</p>
+            </div>
+
+            <img src="imagens/cultura.jpg"
+                 alt="Mulher angolana com traje tradicional de padrões geométricos em vermelho, preto, amarelo e branco, com henna nas mãos e colares ancestrais"
+                 class="section-img"
+                 loading="lazy">
+
+            <div class="content-body">
+                <p>
+                    Esta representação visual traduz a alma de Angola através de uma imersão profunda na nossa identidade,
+                    destacando a riqueza dos trajes tradicionais, a solenidade das nossas expressões
+                    e a vibração única da nossa cultura nacional.
+                </p>
+
+                <div class="extra-info hidden" id="extra-cultura">
+                    <p>
+                        No centro da composição, a imponência e a serenidade da mulher angolana assumem o protagonismo,
+                        realçadas por um traje repleto de padrões geométricos marcantes nas cores vermelho, preto, amarelo e branco.
+                        O detalhe minucioso da pintura de henna nas suas mãos e os colares tradicionais reforçam a forte ligação
+                        às raízes ancestrais, enquanto o fundo, preenchido pelas mesmas texturas dinâmicas, cria uma
+                        atmosfera artística poderosa que celebra a herança, a moda e o orgulho da nossa terra.
+                    </p>
+                    <h3>Manifestações Culturais</h3>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <i class="fa-solid fa-music" aria-hidden="true"></i>
+                            <strong>Semba &amp; Kizomba</strong>
+                            <p>Ritmos que nasceram em Angola e conquistaram o mundo, expressando alegria e melancolia através do movimento.</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fa-solid fa-paintbrush" aria-hidden="true"></i>
+                            <strong>Arte Tchokwe</strong>
+                            <p>Os Tchokwe são reconhecidos pelos seus mascarados rituais (Cikunza) e pelas esculturas em madeira de alto valor simbólico.</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                            <strong>Literatura</strong>
+                            <p>Agostinho Neto, primeiro presidente e poeta, representa a fusão entre luta pela liberdade e expressão literária em Angola.</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+                            <strong>Gastronomia</strong>
+                            <p>O muamba de galinha, calulu de peixe e o funje são pratos emblemáticos que contam a história do território.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-box">
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <strong>Sabia que?</strong> A língua portuguesa coexiste com mais de 40 línguas nacionais, como o Kimbundu, Kikongo, Umbundu, Chokwe e Ngangela.
+                    </div>
+                </div>
+
+                <button type="button" class="toggle-info" aria-expanded="false" aria-controls="extra-cultura">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Saiba mais</span>
+                </button>
+            </div>
+
+        </section>
+
+        <!-- ====== SECÇÃO TURISMO ====== -->
+        <section id="turismo" class="content-section" aria-labelledby="turismo-titulo">
+
+            <div class="section-header">
+                <span class="section-eyebrow">
+                    <i class="fa-solid fa-mountain-sun" aria-hidden="true"></i>
+                    Destinos
+                </span>
+                <h2 id="turismo-titulo">Turismo em Angola</h2>
+                <p class="section-lead">Natureza intacta, paisagens épicas e hospitalidade genuína.</p>
+            </div>
+
+            <img src="imagens/turismo.jpg"
+                 alt="Estrada serpenteante da Serra da Leba com curvas sobre o planalto da Huíla em Angola"
+                 class="section-img"
+                 loading="lazy">
+
+            <div class="content-body">
+                <p>
+                    Angola possui belas paisagens como a <strong>Serra da Leba</strong>, onde a Engenharia abraça a Natureza
+                    numa estrada que venceu mais de 1.000 metros de desnível em 56 curvas inesquecíveis.
+                </p>
+
+                <div class="extra-info hidden" id="extra-turismo">
+                    <p>
+                        Situada na fronteira entre as províncias da Huíla e do Namibe, a Serra da Leba é um dos destinos
+                        turísticos mais fascinantes e icónicos de Angola. Este monumento natural e arquitectónico é mundialmente
+                        famoso pela sua estrada serpenteante que desafia a gravidade, vencendo um desnível de mais de 1.000 metros
+                        através de 56 curvas sinuosas esculpidas na rocha viva.
+                    </p>
+                    <h3>Destinos Imperdíveis</h3>
+                    <div class="tourism-list">
+                        <div class="tourism-item">
+                            <span class="tourism-num" aria-hidden="true">01</span>
+                            <div>
+                                <strong>Quedas de Kalandula</strong>
+                                <p>Uma das maiores quedas de água de África, com 105 metros de queda e 400 metros de largura na província de Malanje.</p>
+                            </div>
+                        </div>
+                        <div class="tourism-item">
+                            <span class="tourism-num" aria-hidden="true">02</span>
+                            <div>
+                                <strong>Parque Nacional da Kissama</strong>
+                                <p>O maior parque nacional de Angola, a 70 km de Luanda, lar de elefantes, palancas-negras-gigantes e aves raras.</p>
+                            </div>
+                        </div>
+                        <div class="tourism-item">
+                            <span class="tourism-num" aria-hidden="true">03</span>
+                            <div>
+                                <strong>Baía Azul — Benguela</strong>
+                                <p>Praias de areia branca, águas cristalinas e uma promenade histórica que revela a arquitectura colonial portuguesa.</p>
+                            </div>
+                        </div>
+                        <div class="tourism-item">
+                            <span class="tourism-num" aria-hidden="true">04</span>
+                            <div>
+                                <strong>Deserto do Namibe</strong>
+                                <p>Um dos desertos mais antigos do mundo, com dunas cor de laranja, welwitschia mirabilis (planta com mais de 2.000 anos) e silêncio absoluto.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="highlight-box">
+                        <i class="fa-solid fa-palanca" aria-hidden="true"></i>
+                        <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+                        <strong>A Palanca-Negra-Gigante</strong> — símbolo nacional e animal em vias de extinção — é encontrada exclusivamente nas florestas da Cangandala e do Luando.
+                    </div>
+                </div>
+
+                <button type="button" class="toggle-info" aria-expanded="false" aria-controls="extra-turismo">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Saiba mais</span>
+                </button>
+            </div>
+
+        </section>
+
+        <!-- ====== SECÇÃO EXPLORAR ====== -->
+        <section id="explorar" class="content-section" aria-labelledby="explorar-titulo">
+
+            <div class="section-header">
+                <span class="section-eyebrow">
+                    <i class="fa-solid fa-compass" aria-hidden="true"></i>
+                    Navegação
+                </span>
+                <h2 id="explorar-titulo">Explorar Categorias</h2>
+                <p class="section-lead">Clique num cartão para navegar directamente para a secção desejada.</p>
+            </div>
+
+            <div class="cards" role="list">
+                <button class="category-card" data-target="cultura" role="listitem">
+                    <i class="fa-solid fa-masks-theater" aria-hidden="true"></i>
+                    <span>Cultura</span>
+                </button>
+                <button class="category-card" data-target="turismo" role="listitem">
+                    <i class="fa-solid fa-mountain-sun" aria-hidden="true"></i>
+                    <span>Turismo</span>
+                </button>
+                <button class="category-card" data-target="economia" role="listitem">
+                    <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                    <span>Economia</span>
+                </button>
+                <button class="category-card" data-target="tecnologia" role="listitem">
+                    <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+                    <span>Tecnologia</span>
+                </button>
+                <button class="category-card" data-target="sistemas-operativos" role="listitem">
+                    <i class="fa-solid fa-server" aria-hidden="true"></i>
+                    <span>Sistemas Op.</span>
+                </button>
+                <button class="category-card" data-target="participacao" role="listitem">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    <span>Participação</span>
+                </button>
+            </div>
+
+        </section>
+
+        <!-- ====== SECÇÃO ECONOMIA ====== -->
+        <section id="economia" class="content-section" aria-labelledby="economia-titulo">
+
+            <div class="section-header">
+                <span class="section-eyebrow">
+                    <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                    Finanças e Desenvolvimento
+                </span>
+                <h2 id="economia-titulo">Economia de Angola</h2>
+                <p class="section-lead">Da dependência do petróleo à diversificação estratégica.</p>
+            </div>
+
+            <div class="content-body">
+
+                <!-- Tabela principal -->
+                <table aria-label="Sectores económicos de Angola">
+                    <thead>
+                        <tr>
+                            <th scope="col">Sector</th>
+                            <th scope="col">Contributo p/ PIB</th>
+                            <th scope="col">Importância Estratégica</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="fa-solid fa-oil-well" aria-hidden="true"></i> Petróleo</td>
+                            <td>~45%</td>
+                            <td>Principal fonte de divisas e exportações</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-solid fa-wheat-awn" aria-hidden="true"></i> Agricultura</td>
+                            <td>~25%</td>
+                            <td>Segurança alimentar e emprego rural</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-solid fa-gem" aria-hidden="true"></i> Diamantes</td>
+                            <td>~5%</td>
+                            <td>3.º maior produtor de diamantes de África</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i> Turismo</td>
+                            <td>~2%</td>
+                            <td>Sector em expansão com grande potencial</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-solid fa-industry" aria-hidden="true"></i> Indústria</td>
+                            <td>~8%</td>
+                            <td>Construção, cimento, bebidas e têxtil</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="extra-info hidden" id="extra-economia">
+                    <p>
+                        Angola investe progressivamente em infraestruturas, energia renovável e digitalização
+                        para diversificar a sua economia e reduzir a dependência do petróleo.
+                        O Plano de Desenvolvimento Nacional (PDN 2023–2027) visa triplicar o PIB não-petrolífero.
+                    </p>
+                    <h3>Indicadores Chave</h3>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <i class="fa-solid fa-sack-dollar" aria-hidden="true"></i>
+                            <strong>Moeda</strong>
+                            <p>Kwanza (AOA) — Banco Nacional de Angola controla a política monetária nacional.</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fa-solid fa-ship" aria-hidden="true"></i>
+                            <strong>Porto de Luanda</strong>
+                            <p>Um dos portos mais movimentados de África Austral, com capacidade para receber navios de grande porte.</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fa-solid fa-solar-panel" aria-hidden="true"></i>
+                            <strong>Energia Renovável</strong>
+                            <p>A Barragem de Laúca no Rio Kwanza tem capacidade instalada de 2.070 MW, a maior da África Subsariana.</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+                            <strong>CEDEAO &amp; UA</strong>
+                            <p>Angola é membro activo da União Africana e da SADC, com acordos comerciais em toda a região.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-box">
+                        <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+                        <strong>Meta 2027:</strong> Reduzir a dependência do petróleo de 45% para 35% do PIB através da diversificação agrícola, tecnológica e turística.
+                    </div>
+                </div>
+
+                <button type="button" class="toggle-info" aria-expanded="false" aria-controls="extra-economia">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Saiba mais</span>
+                </button>
+            </div>
+
+        </section>
+
+        <!-- ====== SECÇÃO TECNOLOGIA ====== -->
+        <section id="tecnologia" class="content-section" aria-labelledby="tecnologia-titulo">
+
+            <div class="section-header">
+                <span class="section-eyebrow">
+                    <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+                    Inovação
+                </span>
+                <h2 id="tecnologia-titulo">Tecnologia em Angola</h2>
+                <p class="section-lead">Da programação às startups, Angola está a construir o seu futuro digital.</p>
+            </div>
+
+            <img src="imagens/tecnologia.jpg"
+                 alt="Jovem programador angolano a trabalhar num ambiente de desenvolvimento de software moderno"
+                 class="section-img"
+                 loading="lazy">
+
+            <div class="content-body">
+                <p>
+                    A tecnologia em Angola cresce através da programação, das startups e do ensino digital,
+                    impulsionada por uma população jovem com grande apetência pela inovação.
+                </p>
+
+                <div class="extra-info hidden" id="extra-tecnologia">
+                    <p>
+                        Existem iniciativas que apoiam jovens empreendedores e promovem oficinas de codificação
+                        nas escolas. O ecossistema de startups em Luanda cresce a ritmo acelerado, com foco em
+                        fintech, agritech e soluções de mobilidade urbana.
+                    </p>
+                    <h3>Ecossistema Digital</h3>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+                            <strong>Conectividade</strong>
+                            <p>Expansão da rede de fibra óptica e 4G/LTE nas principais cidades. Cabo submarino SACS liga Angola ao Brasil e à América do Sul.</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+                            <strong>Startups</strong>
+                            <p>Hubs como o Angolan Startup Hub e a Aldeia Digital impulsionam mais de 200 startups nacionais por ano.</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                            <strong>Formação TI</strong>
+                            <p>Universidades e institutos como o ISPTEC, ISPI e Instituto Superior Politécnico de Luanda formam engenheiros de excelência.</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fa-brands fa-android" aria-hidden="true"></i>
+                            <strong>Mobile First</strong>
+                            <p>Com mais de 15 milhões de utilizadores de smartphone, Angola é um mercado mobile-first em constante expansão.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="toggle-info" aria-expanded="false" aria-controls="extra-tecnologia">
+                    <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    <span>Saiba mais</span>
+                </button>
+            </div>
+
+        </section>
+
+        <!-- ====== SECÇÃO SISTEMAS OPERATIVOS (nova — cadeira) ====== -->
+        <section id="sistemas-operativos" class="content-section so-section" aria-labelledby="so-titulo">
+
+            <div class="section-header">
+                <span class="section-eyebrow">
+                    <i class="fa-solid fa-server" aria-hidden="true"></i>
+                    Cadeira — Sistemas Operativos
+                </span>
+                <h2 id="so-titulo">Sistemas Operativos em Angola</h2>
+                <p class="section-lead">Como os Sistemas Operativos impulsionam o desenvolvimento tecnológico angolano.</p>
+            </div>
+
+            <div class="content-body">
+                <p>
+                    Um <strong>Sistema Operativo (SO)</strong> é o software fundamental que gere os recursos de hardware
+                    de um computador e fornece serviços comuns para os programas de aplicação.
+                    Em Angola, a adopção de diferentes sistemas operativos reflecte o crescimento digital do país.
+                </p>
+
+                <div class="so-grid">
+
+                    <div class="so-card">
+                        <div class="so-icon windows" aria-hidden="true">
+                            <i class="fa-brands fa-windows"></i>
+                        </div>
+                        <h3>Microsoft Windows</h3>
+                        <p>O sistema mais utilizado em empresas e instituições angolanas. O Windows 10 e 11 dominam o mercado corporativo e educativo.</p>
+                        <ul>
+                            <li>Interface gráfica (GUI) intuitiva</li>
+                            <li>Amplo suporte a software comercial</li>
+                            <li>Utilizado em escritórios, escolas e governo</li>
+                        </ul>
+                    </div>
+
+                    <div class="so-card">
+                        <div class="so-icon linux" aria-hidden="true">
+                            <i class="fa-brands fa-linux"></i>
+                        </div>
+                        <h3>Linux</h3>
+                        <p>Sistema preferido por programadores, servidores e instituições académicas em Angola, como o ISPI e o ISPTEC.</p>
+                        <ul>
+                            <li>Código aberto (open source) e gratuito</li>
+                            <li>Alta segurança e estabilidade</li>
+                            <li>Ideal para servidores e desenvolvimento</li>
+                        </ul>
+                    </div>
+
+                    <div class="so-card">
+                        <div class="so-icon android" aria-hidden="true">
+                            <i class="fa-brands fa-android"></i>
+                        </div>
+                        <h3>Android</h3>
+                        <p>Com mais de 15 milhões de smartphones em Angola, o Android é o SO dominante no mercado móvel nacional.</p>
+                        <ul>
+                            <li>Sistema móvel mais popular em África</li>
+                            <li>Baseado no núcleo Linux</li>
+                            <li>Ecossistema de apps em crescimento local</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Tabela comparativa de SOs -->
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Comparação de Sistemas Operativos</h3>
+                <table aria-label="Comparação entre sistemas operativos">
+                    <thead>
+                        <tr>
+                            <th scope="col">Característica</th>
+                            <th scope="col"><i class="fa-brands fa-windows" aria-hidden="true"></i> Windows</th>
+                            <th scope="col"><i class="fa-brands fa-linux" aria-hidden="true"></i> Linux</th>
+                            <th scope="col"><i class="fa-brands fa-android" aria-hidden="true"></i> Android</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tipo</td>
+                            <td>Proprietário</td>
+                            <td>Open Source</td>
+                            <td>Open Source</td>
+                        </tr>
+                        <tr>
+                            <td>Custo</td>
+                            <td>Pago</td>
+                            <td>Gratuito</td>
+                            <td>Gratuito</td>
+                        </tr>
+                        <tr>
+                            <td>Plataforma</td>
+                            <td>Desktop/Laptop</td>
+                            <td>Desktop/Servidor</td>
+                            <td>Mobile/Tablet</td>
+                        </tr>
+                        <tr>
+                            <td>Segurança</td>
+                            <td>Média</td>
+                            <td>Alta</td>
+                            <td>Alta</td>
+                        </tr>
+                        <tr>
+                            <td>Uso em Angola</td>
+                            <td>Muito alto</td>
+                            <td>Académico/TI</td>
+                            <td>Dominante (mobile)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box" style="margin-top: 1.5rem;">
+                    <i class="fa-solid fa-code" aria-hidden="true"></i>
+                    <strong>Referência W3Schools:</strong> Este projecto foi desenvolvido com base em
+                    <strong>HTML5</strong>, <strong>CSS3</strong> e <strong>JavaScript</strong> — linguagens
+                    fundamentais ensinadas em <a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer">w3schools.com</a>,
+                    o maior portal de aprendizagem web do mundo, recomendado pelo Professor para esta cadeira.
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ====== SECÇÃO VÍDEO ====== -->
+        <section id="video" class="content-section" aria-labelledby="video-titulo">
+
+            <div class="section-header">
+                <span class="section-eyebrow">
+                    <i class="fa-solid fa-play-circle" aria-hidden="true"></i>
+                    Multimédia
+                </span>
+                <h2 id="video-titulo">Vídeo Sobre Angola</h2>
+                <p class="section-lead">Uma janela audiovisual para o coração de Angola.</p>
+            </div>
+
+            <div class="video-wrapper">
+                <iframe
+                    width="100%"
+                    height="420"
+                    src="https://www.youtube.com/embed/RT_58sSr6yI"
+                    title="Vídeo documental sobre Angola"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+            </div>
+
+           <p class="video-fallback">
+    <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+    Se o vídeo não carregar,
+    <a href="imagens/Angola.mp4" target="_blank">
+        clique aqui para assistir ao vídeo
+    </a>.
+</p>
+
+        </section>
+
+        <!-- ====== SECÇÃO FORMULÁRIO ====== -->
+        <section id="participacao" class="content-section" aria-labelledby="form-titulo">
+
+            <div class="section-header">
+                <span class="section-eyebrow">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    Comunidade
+                </span>
+                <h2 id="form-titulo">Formulário de Participação</h2>
+                <p class="section-lead">Partilhe a sua categoria favorita e faça parte deste projecto educativo.</p>
+            </div>
+
+            <div class="content-body">
+                <form id="formulario" novalidate aria-label="Formulário de participação">
+
+                    <div class="form-group">
+                        <label for="nome">
+                            <i class="fa-solid fa-user" aria-hidden="true"></i>
+                            Nome Completo
+                        </label>
+                        <input type="text" id="nome" name="nome"
+                               placeholder="Digite o seu nome completo"
+                               autocomplete="name"
+                               required
+                               aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            Endereço de Email
+                        </label>
+                        <input type="email" id="email" name="email"
+                               placeholder="exemplo@email.com"
+                               autocomplete="email"
+                               required
+                               aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="provincia">
+                            <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+                            Província
+                        </label>
+                        <select id="provincia" name="provincia" aria-label="Seleccione a sua província">
+                            <option value="" disabled selected>Seleccione a sua província</option>
+                            <option>Luanda</option>
+                            <option>Huíla</option>
+                            <option>Cunene</option>
+                            <option>Benguela</option>
+                            <option>Huambo</option>
+                            <option>Bié</option>
+                            <option>Malanje</option>
+                            <option>Cabinda</option>
+                            <option>Outra</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categoria">
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            Categoria Favorita
+                        </label>
+                        <select id="categoria" name="categoria" aria-label="Seleccione a sua categoria favorita">
+                            <option value="Cultura">Cultura</option>
+                            <option value="Turismo">Turismo</option>
+                            <option value="Economia">Economia</option>
+                            <option value="Tecnologia">Tecnologia</option>
+                            <option value="Sistemas Operativos">Sistemas Operativos</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">
+                            <i class="fa-solid fa-comment" aria-hidden="true"></i>
+                            Mensagem (opcional)
+                        </label>
+                        <textarea id="mensagem" name="mensagem"
+                                  placeholder="Partilhe os seus pensamentos sobre Angola..."
+                                  rows="4"
+                                  aria-label="Mensagem opcional"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                        Enviar Participação
+                    </button>
+
+                </form>
+
+                <div id="feedback" class="feedback" role="alert" aria-live="polite"></div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ===================== RODAPÉ ===================== -->
+    <footer>
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <span class="footer-ao">AO</span>
+                <div>
+                    <strong>Angola — Uma Nação, Muitas Dimensões</strong>
+                    <p>Projecto educativo para a cadeira de Sistemas Operativos</p>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <a href="#cultura">Cultura</a>
+                <a href="#turismo">Turismo</a>
+                <a href="#economia">Economia</a>
+                <a href="#tecnologia">Tecnologia</a>
+                <a href="#sistemas-operativos">Sistemas Op.</a>
+            </div>
+
+            <div class="footer-ref">
+                <p>Referência didáctica:
+                    <a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer">w3schools.com</a>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-copy">
+            <p>
+                Projecto desenvolvido em HTML5, CSS3 e JavaScript &nbsp;|&nbsp;
+                &copy; 2026 &nbsp;·&nbsp; Filomena De Freitas
+                &nbsp;·&nbsp; Universidade Mandume Ya Ndemufayo
+            </p>
+            <a href="#topo" class="back-to-top" aria-label="Voltar ao topo">
+                <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+            </a>
+        </div>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
