@@ -1,72 +1,308 @@
 <!DOCTYPE html>
+<!-- 
+    ============================================================
+    DECLARAÇÃO DO TIPO DE DOCUMENTO
+    ============================================================
+    <!DOCTYPE html> indica ao navegador que este é um documento
+    HTML5. Isso garante que o navegador use o modo padrão de 
+    renderização, não o modo "quirks" (compatibilidade com 
+    navegadores antigos).
+    ============================================================
+-->
 <html lang="pt">
+<!-- 
+    ============================================================
+    TAG <html>
+    ============================================================
+    lang="pt" define o idioma principal da página como português.
+    Isso ajuda motores de busca e leitores de tela a interpretarem
+    corretamente o conteúdo.
+    ============================================================
+-->
 
 <head>
+    <!-- 
+        ============================================================
+        CABEÇALHO (HEAD)
+        ============================================================
+        O <head> contém metadados e informações sobre a página que
+        não são visíveis diretamente no conteúdo. É aqui que 
+        definimos codificação, título, descrições e links para 
+        recursos externos.
+        ============================================================
+    -->
+    
     <meta charset="UTF-8">
+    <!-- 
+        ============================================================
+        META CHARSET
+        ============================================================
+        charset="UTF-8" define a codificação de caracteres como 
+        UTF-8, que suporta praticamente todos os caracteres de 
+        todos os idiomas do mundo (incluindo acentos e caracteres 
+        especiais usados em português: ç, ã, ê, etc.).
+        ============================================================
+    -->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+        ============================================================
+        META VIEWPORT
+        ============================================================
+        Define como a página deve ser exibida em dispositivos móveis.
+        - width=device-width: a largura da página acompanha a largura
+          do dispositivo (telemóvel, tablet, etc.)
+        - initial-scale=1.0: o zoom inicial é de 100% (sem zoom)
+        ============================================================
+    -->
+    
     <meta name="description" content="Projecto educativo sobre Angola — cultura, turismo, economia e tecnologia. Cadeira de Sistemas Operativos, ISPI 2026.">
+    <!-- 
+        ============================================================
+        META DESCRIPTION
+        ============================================================
+        Fornece uma descrição resumida da página para motores de 
+        busca (Google, Bing, etc.). Esta descrição aparece nos 
+        resultados de pesquisa, ajudando os utilizadores a 
+        entenderem do que se trata a página.
+        ============================================================
+    -->
+    
     <title>Angola — Uma Nação, Muitas Dimensões</title>
+    <!-- 
+        ============================================================
+        TÍTULO DA PÁGINA
+        ============================================================
+        <title> define o texto que aparece na aba do navegador.
+        É também usado como título nos resultados de pesquisa e 
+        como nome da página quando adicionada aos favoritos.
+        ============================================================
+    -->
 
-    <!-- Google Fonts -->
+    <!-- 
+        ============================================================
+        FONTES DO GOOGLE (Google Fonts)
+        ============================================================
+        Google Fonts é um serviço gratuito que fornece fontes 
+        (tipos de letra) prontas para usar na web.
+        ============================================================
+    -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- 
+        rel="preconnect" estabelece uma conexão antecipada com o 
+        servidor do Google Fonts para carregar as fontes mais 
+        rapidamente (otimização de performance).
+    -->
+    
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 
+        crossorigin permite que o navegador faça uma requisição a 
+        um domínio diferente (cross-origin) para carregar recursos.
+    -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- 
+        ============================================================
+        LINK PARA AS FONTES
+        ============================================================
+        Aqui estamos a importar duas famílias de fontes:
+        - Oswald: usada para títulos (pesos: 400, 600, 700)
+        - Inter: usada para textos corridos (pesos: 400, 500, 600)
+        
+        O parâmetro display=swap garante que o texto seja mostrado 
+        imediatamente com a fonte de fallback (padrão do sistema) 
+        enquanto a fonte personalizada está a carregar.
+        ============================================================
+    -->
 
-    <!-- Font Awesome para ícones -->
+    <!-- 
+        ============================================================
+        FONT AWESOME
+        ============================================================
+        Font Awesome é uma biblioteca de ícones vetoriais que podem 
+        ser usados via CSS. São ícones em forma de fontes, o que 
+        permite serem redimensionados e coloridos como texto.
+        ============================================================
+    -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- 
+        Este link carrega a biblioteca Font Awesome versão 6.5.0.
+        Os ícones são usados em toda a página para melhorar a 
+        experiência visual (ex: ícone de lua para modo escuro, 
+        ícones de secção, etc.).
+    -->
 
-    <!-- CSS principal -->
+    <!-- 
+        ============================================================
+        CSS PRINCIPAL (folha de estilos externa)
+        ============================================================
+        <link rel="stylesheet"> carrega um ficheiro CSS externo.
+        Isso mantém o HTML limpo e permite reutilizar os estilos 
+        em várias páginas.
+        ============================================================
+    -->
     <link rel="stylesheet" href="style.css">
+
 </head>
+<!-- FIM DO CABEÇALHO -->
 
 <body>
+    <!-- 
+        ============================================================
+        CORPO DO DOCUMENTO (BODY)
+        ============================================================
+        O <body> contém todo o conteúdo visível da página: textos, 
+        imagens, vídeos, formulários, etc.
+        ============================================================
+    -->
 
-    <!-- ===================== CABEÇALHO HERO ===================== -->
+    <!-- 
+        ============================================================
+        CABEÇALHO HERO (HERO HEADER)
+        ============================================================
+        O "hero" é uma secção de destaque no topo da página que 
+        apresenta o tema principal de forma visualmente impactante.
+        ============================================================
+    -->
     <header id="topo">
+        <!-- 
+            id="topo" é um identificador único que permite:
+            1. Criar âncoras para navegação interna (link para #topo)
+            2. Estilizar este elemento específico via CSS
+            3. Manipular via JavaScript com getElementById('topo')
+        -->
 
-        <!-- Padrão SVG decorativo inspirado em capulana angolana -->
-        <div class="hero-pattern" aria-hidden="true"></div>
+        <!-- 
+            ============================================================
+            PADRÃO DECORATIVO SVG (fundo do hero)
+            ============================================================
+            <div> com uma classe para criar um padrão decorativo no 
+            fundo do cabeçalho, inspirado em capulana (tecido 
+            tradicional angolano).
+            ============================================================
+        -->
+        <div class="hero-pattern" aria-hidden="true">
+            <!-- 
+                aria-hidden="true" esconde este elemento dos leitores 
+                de tela porque é apenas decorativo (não contém 
+                informação relevante para utilizadores com 
+                deficiência visual).
+            -->
+        </div>
 
         <div class="hero-content">
-
-            <!-- Bandeira angolana em SVG inline -->
-            <div class="flag-badge" aria-label="Bandeira de Angola">
-                <svg viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bandeira de Angola">
-                    <rect width="60" height="20" fill="#CC0000"/>
-                    <rect y="20" width="60" height="20" fill="#000"/>
-                    <g transform="translate(30,20)">
-                        <path d="M0,-11 L2.6,-3.4 L10.5,-3.4 L4.2,1.3 L6.5,8.5 L0,4 L-6.5,8.5 L-4.2,1.3 L-10.5,-3.4 L-2.6,-3.4 Z" fill="#FFCC00" transform="scale(0.85)"/>
-                        <path d="M-5,-7 Q0,2 5,-7" fill="none" stroke="#FFCC00" stroke-width="1.4"/>
-                        <rect x="-1" y="-2" width="2" height="7" fill="#FFCC00"/>
-                        <rect x="-4" y="3" width="8" height="1.5" fill="#FFCC00"/>
-                    </g>
-                </svg>
+            <!-- 
+                ============================================================
+                LOGO DE ANGOLA
+                ============================================================
+                Substituímos o SVG da bandeira por uma imagem real 
+                do logo de Angola armazenada na pasta "imagens".
+                ============================================================
+            -->
+            <div class="flag-badge" aria-label="Logo de Angola">
+                <!-- 
+                    class="flag-badge": classe CSS para estilizar o 
+                    contêiner da imagem com borda e sombra.
+                    
+                    aria-label fornece uma descrição acessível para 
+                    leitores de tela, já que a imagem por si só pode 
+                    não ser suficiente para descrever o conteúdo.
+                -->
+                <img src="imagens/logo-de-angola.jpg" alt="Logo de Angola" width="60" height="40" />
+                <!-- 
+                    ============================================================
+                    TAG <img>
+                    ============================================================
+                    src: caminho para a imagem (relativo à pasta do HTML)
+                    alt: texto alternativo - ESSENCIAL para acessibilidade!
+                         - Se a imagem não carregar, o texto aparece
+                         - Leitores de tela leem este texto
+                         - Motores de busca usam para indexação
+                    width/height: dimensões da imagem (60px x 40px)
+                -->
             </div>
 
             <p class="hero-eyebrow">República de Angola — Projecto Educativo 2026</p>
+            <!-- 
+                ============================================================
+                "EYEBROW" (subtítulo acima do título)
+                ============================================================
+                Eyebrow é um termo de design para um pequeno texto que 
+                antecede o título principal, normalmente com menos 
+                destaque e que contextualiza o conteúdo.
+                ============================================================
+            -->
+
             <h1>Angola<br><span class="hero-sub">Uma Nação,<br>Muitas Dimensões</span></h1>
+            <!-- 
+                ============================================================
+                TAG <h1> (TÍTULO PRINCIPAL)
+                ============================================================
+                <h1> é o título mais importante da página. Deve haver 
+                apenas UM <h1> por página. É crucial para SEO 
+                (Search Engine Optimization) e para a hierarquia 
+                semântica do documento.
+                
+                <br> é uma quebra de linha (line break).
+                
+                <span> é um contêiner inline usado para estilizar 
+                partes específicas do texto sem quebrar a linha.
+                ============================================================
+            -->
+
             <p class="hero-description">
                 Explore a riqueza cultural, o potencial turístico,
                 a economia e o avanço tecnológico de Angola,
                 o país do futuro no coração de África.
             </p>
+            <!-- 
+                ============================================================
+                <p> (PARÁGRAFO)
+                ============================================================
+                Define um parágrafo de texto. O navegador adiciona 
+                automaticamente uma margem entre parágrafos.
+                ============================================================
+            -->
 
             <div class="hero-stats" aria-label="Dados rápidos sobre Angola">
+                <!-- 
+                    aria-label fornece uma etiqueta acessível para 
+                    este bloco de estatísticas.
+                -->
+                
                 <div class="stat">
                     <span class="stat-number">34,5M</span>
                     <span class="stat-label">Habitantes</span>
                 </div>
+                <!-- 
+                    ============================================================
+                    DIVISÃO DE ESTATÍSTICAS
+                    ============================================================
+                    Cada .stat contém um número e um rótulo.
+                    <span> é usado para texto inline que pode ser 
+                    estilizado separadamente.
+                    ============================================================
+                -->
+                
                 <div class="stat-divider" aria-hidden="true"></div>
+                <!-- 
+                    Divisor visual entre estatísticas (apenas decorativo).
+                -->
+                
                 <div class="stat">
                     <span class="stat-number">18</span>
                     <span class="stat-label">Províncias</span>
                 </div>
+                
                 <div class="stat-divider" aria-hidden="true"></div>
+                
                 <div class="stat">
                     <span class="stat-number">1975</span>
                     <span class="stat-label">Independência</span>
                 </div>
+                
                 <div class="stat-divider" aria-hidden="true"></div>
+                
                 <div class="stat">
                     <span class="stat-number">1,25M</span>
                     <span class="stat-label">km² de área</span>
@@ -74,24 +310,92 @@
             </div>
 
             <button id="themeToggle" type="button" aria-label="Alternar tema">
+                <!-- 
+                    ============================================================
+                    TAG <button>
+                    ============================================================
+                    Botão interativo. Atributos importantes:
+                    - id: identificador único para JavaScript
+                    - type="button": define que é um botão normal (não 
+                      submete formulários)
+                    - aria-label: descrição acessível da função do botão
+                    
+                    O botão alterna entre tema claro e escuro.
+                    ============================================================
+                -->
                 <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                <!-- 
+                    Ícone da lua (Font Awesome). aria-hidden oculta 
+                    para leitores de tela porque o texto "Modo Escuro" 
+                    já explica a função.
+                -->
                 <span>Modo Escuro</span>
             </button>
 
         </div>
 
-        <!-- Scroll cue -->
+        <!-- 
+            ============================================================
+            INDICADOR DE ROLAGEM (SCROLL CUE)
+            ============================================================
+            Uma seta que indica ao utilizador que há mais conteúdo 
+            abaixo, convidando-o a rolar a página.
+            ============================================================
+        -->
         <a href="#cultura" class="scroll-cue" aria-label="Rolar para o conteúdo">
+            <!-- 
+                <a> (link) com href="#cultura" que leva à secção com 
+                id="cultura". Isso é uma âncora interna.
+                ============================================================
+            -->
             <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            <!-- 
+                Ícone de seta para baixo.
+            -->
         </a>
 
     </header>
+    <!-- FIM DO CABEÇALHO HERO -->
 
-    <!-- ===================== NAVEGAÇÃO ===================== -->
+    <!-- 
+        ============================================================
+        BARRA DE NAVEGAÇÃO (NAVEGAÇÃO PRINCIPAL)
+        ============================================================
+        A tag <nav> define uma área de navegação. É semântica e 
+        ajuda motores de busca e leitores de tela a identificar a 
+        navegação principal do site.
+        ============================================================
+    -->
     <nav role="navigation" aria-label="Menu principal">
+        <!-- 
+            role="navigation" é um atributo ARIA que define 
+            explicitamente o papel deste elemento.
+        -->
+        
         <div class="nav-inner">
+            <!-- 
+                Contêiner interno para centralizar e alinhar os 
+                itens da navegação.
+            -->
+            
             <span class="nav-brand" aria-hidden="true">AO</span>
+            <!-- 
+                "AO" é a sigla de Angola (código ISO). Usado como 
+                marca (brand) no menu.
+            -->
+
             <div class="nav-links">
+                <!-- 
+                    ============================================================
+                    LINKS DE NAVEGAÇÃO
+                    ============================================================
+                    Cada <a> (âncora) aponta para uma secção da página 
+                    usando o identificador (id) da secção.
+                    
+                    Os ícones Font Awesome adicionam elementos visuais 
+                    aos links.
+                    ============================================================
+                -->
                 <a href="#cultura"><i class="fa-solid fa-masks-theater" aria-hidden="true"></i> Cultura</a>
                 <a href="#turismo"><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i> Turismo</a>
                 <a href="#explorar"><i class="fa-solid fa-compass" aria-hidden="true"></i> Explorar</a>
@@ -100,41 +404,128 @@
                 <a href="#sistemas-operativos"><i class="fa-solid fa-server" aria-hidden="true"></i> Sistemas Op.</a>
                 <a href="#participacao"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Participação</a>
             </div>
-            <!-- Menu hamburger para mobile -->
+
+            <!-- 
+                ============================================================
+                MENU HAMBURGER (para dispositivos móveis)
+                ============================================================
+                Um botão que aparece apenas em ecrãs pequenos para 
+                alternar a visibilidade do menu.
+                ============================================================
+            -->
             <button id="menuToggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <!-- 
+                    id="menuToggle": identificador para JavaScript
+                    aria-expanded="false": indica ao leitor de tela que 
+                    o menu está recolhido (será alterado para "true" 
+                    quando expandido)
+                -->
                 <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                <!-- 
+                    Ícone de barras (hamburger) - três linhas horizontais 
+                    que simbolizam um menu.
+                -->
             </button>
         </div>
     </nav>
 
-    <!-- ===================== CONTEÚDO PRINCIPAL ===================== -->
+    <!-- 
+        ============================================================
+        CONTEÚDO PRINCIPAL
+        ============================================================
+        A tag <main> envolve o conteúdo principal da página. É uma 
+        tag semântica que ajuda leitores de tela a identificar onde 
+        está o conteúdo principal, permitindo saltar navegações 
+        repetitivas.
+        ============================================================
+    -->
     <main>
 
-        <!-- ====== SECÇÃO CULTURA ====== -->
+        <!-- 
+            ============================================================
+            SECÇÃO CULTURA
+            ============================================================
+            <section> define uma secção temática do conteúdo.
+            aria-labelledby relaciona a secção ao seu título.
+            ============================================================
+        -->
         <section id="cultura" class="content-section" aria-labelledby="cultura-titulo">
+            <!-- 
+                id="cultura": ponto de ancoragem para links internos
+                aria-labelledby="cultura-titulo": o título desta secção 
+                é o elemento com id="cultura-titulo"
+            -->
 
             <div class="section-header">
+                <!-- 
+                    Cabeçalho da secção com: eyebrow, título e lead
+                -->
                 <span class="section-eyebrow">
                     <i class="fa-solid fa-masks-theater" aria-hidden="true"></i>
                     Identidade
                 </span>
                 <h2 id="cultura-titulo">Cultura Angolana</h2>
+                <!-- 
+                    ============================================================
+                    <h2> (TÍTULO DE NÍVEL 2)
+                    ============================================================
+                    Título secundário. Deve ser usado para sub-secções 
+                    do <h1>. A hierarquia de títulos é importante para 
+                    acessibilidade e SEO: h1 > h2 > h3 > h4 > h5 > h6.
+                    ============================================================
+                -->
                 <p class="section-lead">A expressão viva de um povo com raízes profundas e futuro vibrante.</p>
             </div>
 
+            <!-- 
+                ============================================================
+                IMAGEM DA SECÇÃO
+                ============================================================
+                Atributos importantes:
+                - src: caminho para a imagem
+                - alt: texto alternativo DESCRITIVO da imagem
+                - loading="lazy": carregamento preguiçoso (lazy load) - 
+                  a imagem só carrega quando estiver prestes a entrar 
+                  na viewport, melhorando a performance
+                ============================================================
+            -->
             <img src="imagens/cultura.jpg"
                  alt="Mulher angolana com traje tradicional de padrões geométricos em vermelho, preto, amarelo e branco, com henna nas mãos e colares ancestrais"
                  class="section-img"
                  loading="lazy">
 
             <div class="content-body">
+                <!-- 
+                    ============================================================
+                    CORPO DO CONTEÚDO
+                    ============================================================
+                    Texto principal da secção.
+                    ============================================================
+                -->
                 <p>
                     Esta representação visual traduz a alma de Angola através de uma imersão profunda na nossa identidade,
                     destacando a riqueza dos trajes tradicionais, a solenidade das nossas expressões
                     e a vibração única da nossa cultura nacional.
                 </p>
 
+                <!-- 
+                    ============================================================
+                    CONTEÚDO ADICIONAL (oculto inicialmente)
+                    ============================================================
+                    <div class="extra-info hidden"> contém informações 
+                    extra que só são mostradas quando o utilizador 
+                    clica em "Saiba mais".
+                    
+                    class="hidden" esconde o conteúdo via CSS.
+                    ============================================================
+                -->
                 <div class="extra-info hidden" id="extra-cultura">
+                    <!-- 
+                        id="extra-cultura": identificador usado pelo 
+                        botão "Saiba mais" para controlar a 
+                        visibilidade.
+                    -->
+                    
                     <p>
                         No centro da composição, a imponência e a serenidade da mulher angolana assumem o protagonismo,
                         realçadas por um traje repleto de padrões geométricos marcantes nas cores vermelho, preto, amarelo e branco.
@@ -142,35 +533,81 @@
                         às raízes ancestrais, enquanto o fundo, preenchido pelas mesmas texturas dinâmicas, cria uma
                         atmosfera artística poderosa que celebra a herança, a moda e o orgulho da nossa terra.
                     </p>
+                    
                     <h3>Manifestações Culturais</h3>
+                    <!-- 
+                        <h3> é um título de nível 3, subordinado ao h2.
+                    -->
+
                     <div class="info-grid">
+                        <!-- 
+                            ============================================================
+                            GRELHA DE CARDS (GRID)
+                            ============================================================
+                            <div class="info-grid"> é um contêiner CSS Grid que 
+                            organiza os cards em colunas.
+                            ============================================================
+                        -->
+                        
                         <div class="info-card">
+                            <!-- 
+                                Cada card tem um ícone, título e descrição.
+                            -->
                             <i class="fa-solid fa-music" aria-hidden="true"></i>
                             <strong>Semba &amp; Kizomba</strong>
+                            <!-- 
+                                &amp; é a entidade HTML para o símbolo "&" 
+                                (ampersand).
+                            -->
                             <p>Ritmos que nasceram em Angola e conquistaram o mundo, expressando alegria e melancolia através do movimento.</p>
                         </div>
+                        
                         <div class="info-card">
                             <i class="fa-solid fa-paintbrush" aria-hidden="true"></i>
                             <strong>Arte Tchokwe</strong>
                             <p>Os Tchokwe são reconhecidos pelos seus mascarados rituais (Cikunza) e pelas esculturas em madeira de alto valor simbólico.</p>
                         </div>
+                        
                         <div class="info-card">
                             <i class="fa-solid fa-book-open" aria-hidden="true"></i>
                             <strong>Literatura</strong>
                             <p>Agostinho Neto, primeiro presidente e poeta, representa a fusão entre luta pela liberdade e expressão literária em Angola.</p>
                         </div>
+                        
                         <div class="info-card">
                             <i class="fa-solid fa-utensils" aria-hidden="true"></i>
                             <strong>Gastronomia</strong>
                             <p>O muamba de galinha, calulu de peixe e o funje são pratos emblemáticos que contam a história do território.</p>
                         </div>
                     </div>
+
                     <div class="highlight-box">
+                        <!-- 
+                            ============================================================
+                            CAIXA DE DESTAQUE
+                            ============================================================
+                            <div class="highlight-box"> é uma caixa com fundo 
+                            colorido que destaca uma informação interessante.
+                            ============================================================
+                        -->
                         <i class="fa-solid fa-star" aria-hidden="true"></i>
                         <strong>Sabia que?</strong> A língua portuguesa coexiste com mais de 40 línguas nacionais, como o Kimbundu, Kikongo, Umbundu, Chokwe e Ngangela.
                     </div>
                 </div>
 
+                <!-- 
+                    ============================================================
+                    BOTÃO "SAIBA MAIS"
+                    ============================================================
+                    Este botão controla a visibilidade do conteúdo 
+                    extra (toggle).
+                    
+                    Atributos:
+                    - type="button": não submete formulário
+                    - aria-expanded: indica se o conteúdo está expandido
+                    - aria-controls: aponta para o ID do conteúdo controlado
+                    ============================================================
+                -->
                 <button type="button" class="toggle-info" aria-expanded="false" aria-controls="extra-cultura">
                     <i class="fa-solid fa-plus" aria-hidden="true"></i>
                     <span>Saiba mais</span>
@@ -178,8 +615,16 @@
             </div>
 
         </section>
+        <!-- FIM DA SECÇÃO CULTURA -->
 
-        <!-- ====== SECÇÃO TURISMO ====== -->
+        <!-- 
+            ============================================================
+            SECÇÃO TURISMO
+            ============================================================
+            Estrutura semelhante à secção Cultura, com adaptações de 
+            conteúdo.
+            ============================================================
+        -->
         <section id="turismo" class="content-section" aria-labelledby="turismo-titulo">
 
             <div class="section-header">
@@ -200,6 +645,10 @@
                 <p>
                     Angola possui belas paisagens como a <strong>Serra da Leba</strong>, onde a Engenharia abraça a Natureza
                     numa estrada que venceu mais de 1.000 metros de desnível em 56 curvas inesquecíveis.
+                    <!-- 
+                        <strong> dá ênfase forte ao texto (normalmente a 
+                        negrito). 
+                    -->
                 </p>
 
                 <div class="extra-info hidden" id="extra-turismo">
@@ -209,8 +658,18 @@
                         famoso pela sua estrada serpenteante que desafia a gravidade, vencendo um desnível de mais de 1.000 metros
                         através de 56 curvas sinuosas esculpidas na rocha viva.
                     </p>
+                    
                     <h3>Destinos Imperdíveis</h3>
+                    
                     <div class="tourism-list">
+                        <!-- 
+                            ============================================================
+                            LISTA DE DESTINOS TURÍSTICOS
+                            ============================================================
+                            Cada item tem um número e uma descrição.
+                            ============================================================
+                        -->
+                        
                         <div class="tourism-item">
                             <span class="tourism-num" aria-hidden="true">01</span>
                             <div>
@@ -218,6 +677,7 @@
                                 <p>Uma das maiores quedas de água de África, com 105 metros de queda e 400 metros de largura na província de Malanje.</p>
                             </div>
                         </div>
+                        
                         <div class="tourism-item">
                             <span class="tourism-num" aria-hidden="true">02</span>
                             <div>
@@ -225,6 +685,7 @@
                                 <p>O maior parque nacional de Angola, a 70 km de Luanda, lar de elefantes, palancas-negras-gigantes e aves raras.</p>
                             </div>
                         </div>
+                        
                         <div class="tourism-item">
                             <span class="tourism-num" aria-hidden="true">03</span>
                             <div>
@@ -232,6 +693,7 @@
                                 <p>Praias de areia branca, águas cristalinas e uma promenade histórica que revela a arquitectura colonial portuguesa.</p>
                             </div>
                         </div>
+                        
                         <div class="tourism-item">
                             <span class="tourism-num" aria-hidden="true">04</span>
                             <div>
@@ -240,7 +702,13 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="highlight-box">
+                        <!-- 
+                            ============================================================
+                            CAIXA DE DESTAQUE COM MÚLTIPLOS ÍCONES
+                            ============================================================
+                        -->
                         <i class="fa-solid fa-palanca" aria-hidden="true"></i>
                         <i class="fa-solid fa-leaf" aria-hidden="true"></i>
                         <strong>A Palanca-Negra-Gigante</strong> — símbolo nacional e animal em vias de extinção — é encontrada exclusivamente nas florestas da Cangandala e do Luando.
@@ -254,8 +722,16 @@
             </div>
 
         </section>
+        <!-- FIM DA SECÇÃO TURISMO -->
 
-        <!-- ====== SECÇÃO EXPLORAR ====== -->
+        <!-- 
+            ============================================================
+            SECÇÃO EXPLORAR (Cards de navegação rápida)
+            ============================================================
+            Esta secção contém cards que funcionam como atalhos para 
+            outras secções da página.
+            ============================================================
+        -->
         <section id="explorar" class="content-section" aria-labelledby="explorar-titulo">
 
             <div class="section-header">
@@ -268,26 +744,48 @@
             </div>
 
             <div class="cards" role="list">
+                <!-- 
+                    role="list": define este elemento como uma lista 
+                    para leitores de tela.
+                -->
+                
                 <button class="category-card" data-target="cultura" role="listitem">
+                    <!-- 
+                        ============================================================
+                        CARD DE CATEGORIA
+                        ============================================================
+                        data-target="cultura": atributo data-* personalizado 
+                        que armazena o ID da secção alvo. Este atributo é 
+                        lido por JavaScript para navegar até à secção.
+                        
+                        role="listitem": define que este elemento é um 
+                        item da lista.
+                        ============================================================
+                    -->
                     <i class="fa-solid fa-masks-theater" aria-hidden="true"></i>
                     <span>Cultura</span>
                 </button>
+                
                 <button class="category-card" data-target="turismo" role="listitem">
                     <i class="fa-solid fa-mountain-sun" aria-hidden="true"></i>
                     <span>Turismo</span>
                 </button>
+                
                 <button class="category-card" data-target="economia" role="listitem">
                     <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
                     <span>Economia</span>
                 </button>
+                
                 <button class="category-card" data-target="tecnologia" role="listitem">
                     <i class="fa-solid fa-microchip" aria-hidden="true"></i>
                     <span>Tecnologia</span>
                 </button>
+                
                 <button class="category-card" data-target="sistemas-operativos" role="listitem">
                     <i class="fa-solid fa-server" aria-hidden="true"></i>
                     <span>Sistemas Op.</span>
                 </button>
+                
                 <button class="category-card" data-target="participacao" role="listitem">
                     <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                     <span>Participação</span>
@@ -295,8 +793,16 @@
             </div>
 
         </section>
+        <!-- FIM DA SECÇÃO EXPLORAR -->
 
-        <!-- ====== SECÇÃO ECONOMIA ====== -->
+        <!-- 
+            ============================================================
+            SECÇÃO ECONOMIA
+            ============================================================
+            Esta secção inclui uma tabela HTML, que é uma forma 
+            estruturada de apresentar dados tabulares.
+            ============================================================
+        -->
         <section id="economia" class="content-section" aria-labelledby="economia-titulo">
 
             <div class="section-header">
@@ -310,7 +816,23 @@
 
             <div class="content-body">
 
-                <!-- Tabela principal -->
+                <!-- 
+                    ============================================================
+                    TABELA HTML
+                    ============================================================
+                    Estrutura da tabela:
+                    <table>: contêiner da tabela
+                    <thead>: cabeçalho da tabela
+                    <tbody>: corpo da tabela (dados)
+                    <tr>: linha da tabela (table row)
+                    <th>: célula de cabeçalho (table header)
+                    <td>: célula de dados (table data)
+                    
+                    Atributos:
+                    - scope="col": indica que o <th> é cabeçalho de coluna
+                    - aria-label: descreve a tabela para leitores de tela
+                    ============================================================
+                -->
                 <table aria-label="Sectores económicos de Angola">
                     <thead>
                         <tr>
@@ -354,7 +876,9 @@
                         para diversificar a sua economia e reduzir a dependência do petróleo.
                         O Plano de Desenvolvimento Nacional (PDN 2023–2027) visa triplicar o PIB não-petrolífero.
                     </p>
+                    
                     <h3>Indicadores Chave</h3>
+                    
                     <div class="info-grid">
                         <div class="info-card">
                             <i class="fa-solid fa-sack-dollar" aria-hidden="true"></i>
@@ -377,6 +901,7 @@
                             <p>Angola é membro activo da União Africana e da SADC, com acordos comerciais em toda a região.</p>
                         </div>
                     </div>
+                    
                     <div class="highlight-box">
                         <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
                         <strong>Meta 2027:</strong> Reduzir a dependência do petróleo de 45% para 35% do PIB através da diversificação agrícola, tecnológica e turística.
@@ -390,8 +915,13 @@
             </div>
 
         </section>
+        <!-- FIM DA SECÇÃO ECONOMIA -->
 
-        <!-- ====== SECÇÃO TECNOLOGIA ====== -->
+        <!-- 
+            ============================================================
+            SECÇÃO TECNOLOGIA
+            ============================================================
+        -->
         <section id="tecnologia" class="content-section" aria-labelledby="tecnologia-titulo">
 
             <div class="section-header">
@@ -420,7 +950,9 @@
                         nas escolas. O ecossistema de startups em Luanda cresce a ritmo acelerado, com foco em
                         fintech, agritech e soluções de mobilidade urbana.
                     </p>
+                    
                     <h3>Ecossistema Digital</h3>
+                    
                     <div class="info-grid">
                         <div class="info-card">
                             <i class="fa-solid fa-wifi" aria-hidden="true"></i>
@@ -452,8 +984,16 @@
             </div>
 
         </section>
+        <!-- FIM DA SECÇÃO TECNOLOGIA -->
 
-        <!-- ====== SECÇÃO SISTEMAS OPERATIVOS (nova — cadeira) ====== -->
+        <!-- 
+            ============================================================
+            SECÇÃO SISTEMAS OPERATIVOS
+            ============================================================
+            Esta é a secção específica da cadeira de Sistemas Operativos.
+            Inclui cards sobre diferentes SOs e uma tabela comparativa.
+            ============================================================
+        -->
         <section id="sistemas-operativos" class="content-section so-section" aria-labelledby="so-titulo">
 
             <div class="section-header">
@@ -473,14 +1013,40 @@
                 </p>
 
                 <div class="so-grid">
+                    <!-- 
+                        ============================================================
+                        CARDS DE SISTEMAS OPERATIVOS
+                        ============================================================
+                        Cada card representa um SO com ícone, título, 
+                        descrição e lista de características.
+                        ============================================================
+                    -->
 
                     <div class="so-card">
                         <div class="so-icon windows" aria-hidden="true">
+                            <!-- 
+                                <div class="so-icon">: contêiner para o 
+                                ícone do sistema operativo.
+                                As classes windows, linux, android são usadas 
+                                para estilização específica (cores).
+                            -->
                             <i class="fa-brands fa-windows"></i>
+                            <!-- 
+                                fa-brands: ícones de marcas (brands) do 
+                                Font Awesome.
+                            -->
                         </div>
                         <h3>Microsoft Windows</h3>
                         <p>O sistema mais utilizado em empresas e instituições angolanas. O Windows 10 e 11 dominam o mercado corporativo e educativo.</p>
                         <ul>
+                            <!-- 
+                                ============================================================
+                                <ul> (LISTA NÃO ORDENADA)
+                                ============================================================
+                                <ul> cria uma lista com marcadores (bullets).
+                                <li> define cada item da lista.
+                                ============================================================
+                            -->
                             <li>Interface gráfica (GUI) intuitiva</li>
                             <li>Amplo suporte a software comercial</li>
                             <li>Utilizado em escritórios, escolas e governo</li>
@@ -515,8 +1081,17 @@
 
                 </div>
 
-                <!-- Tabela comparativa de SOs -->
+                <!-- 
+                    ============================================================
+                    TABELA COMPARATIVA DE SISTEMAS OPERATIVOS
+                    ============================================================
+                -->
                 <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Comparação de Sistemas Operativos</h3>
+                <!-- 
+                    style="..." é CSS inline. Não é ideal para 
+                    produção, mas aqui usamos para ajustes rápidos.
+                -->
+                
                 <table aria-label="Comparação entre sistemas operativos">
                     <thead>
                         <tr>
@@ -561,18 +1136,42 @@
                 </table>
 
                 <div class="highlight-box" style="margin-top: 1.5rem;">
+                    <!-- 
+                        ============================================================
+                        CAIXA DE DESTAQUE COM REFERÊNCIA
+                        ============================================================
+                    -->
                     <i class="fa-solid fa-code" aria-hidden="true"></i>
                     <strong>Referência W3Schools:</strong> Este projecto foi desenvolvido com base em
                     <strong>HTML5</strong>, <strong>CSS3</strong> e <strong>JavaScript</strong> — linguagens
                     fundamentais ensinadas em <a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer">w3schools.com</a>,
                     o maior portal de aprendizagem web do mundo, recomendado pelo Professor para esta cadeira.
+                    <!-- 
+                        ============================================================
+                        LINK EXTERNO
+                        ============================================================
+                        <a> com:
+                        - href: URL de destino
+                        - target="_blank": abre o link numa nova aba
+                        - rel="noopener noreferrer": segurança - evita que 
+                          a nova página tenha acesso à página original 
+                          através do objeto window.opener
+                        ============================================================
+                    -->
                 </div>
 
             </div>
 
         </section>
+        <!-- FIM DA SECÇÃO SISTEMAS OPERATIVOS -->
 
-        <!-- ====== SECÇÃO VÍDEO ====== -->
+        <!-- 
+            ============================================================
+            SECÇÃO VÍDEO
+            ============================================================
+            Incorpora um vídeo do YouTube usando <iframe>.
+            ============================================================
+        -->
         <section id="video" class="content-section" aria-labelledby="video-titulo">
 
             <div class="section-header">
@@ -585,6 +1184,23 @@
             </div>
 
             <div class="video-wrapper">
+                <!-- 
+                    ============================================================
+                    <iframe> (I-Frame / Frame Inline)
+                    ============================================================
+                    O <iframe> incorpora conteúdo externo (de outra 
+                    página ou serviço) dentro da página atual.
+                    
+                    Atributos:
+                    - src: URL do conteúdo a incorporar
+                    - width/height: dimensões do iframe
+                    - allow: permissões do conteúdo (ex: acelerómetro, 
+                      autoplay, etc.)
+                    - allowfullscreen: permite que o utilizador coloque 
+                      o vídeo em ecrã inteiro
+                    - loading="lazy": carregamento preguiçoso
+                    ============================================================
+                -->
                 <iframe
                     width="100%"
                     height="420"
@@ -596,17 +1212,34 @@
                 </iframe>
             </div>
 
-           <p class="video-fallback">
-    <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
-    Se o vídeo não carregar,
-    <a href="imagens/Angola.mp4" target="_blank">
-        clique aqui para assistir ao vídeo
-    </a>.
-</p>
+            <!-- 
+                ============================================================
+                FALLBACK PARA VÍDEO
+                ============================================================
+                Se o iframe não carregar (ex: bloqueado por firewall, 
+                sem internet, etc.), o utilizador pode clicar no link 
+                para baixar o vídeo local.
+                ============================================================
+            -->
+            <p class="video-fallback">
+                <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+                Se o vídeo não carregar,
+                <a href="imagens/Angola.mp4" target="_blank">
+                    clique aqui para assistir ao vídeo
+                </a>.
+            </p>
 
         </section>
+        <!-- FIM DA SECÇÃO VÍDEO -->
 
-        <!-- ====== SECÇÃO FORMULÁRIO ====== -->
+        <!-- 
+            ============================================================
+            SECÇÃO PARTICIPAÇÃO (FORMULÁRIO)
+            ============================================================
+            Esta secção contém um formulário HTML para os utilizadores 
+            enviarem as suas participações.
+            ============================================================
+        -->
         <section id="participacao" class="content-section" aria-labelledby="form-titulo">
 
             <div class="section-header">
@@ -619,10 +1252,41 @@
             </div>
 
             <div class="content-body">
+                <!-- 
+                    ============================================================
+                    <form> (FORMULÁRIO)
+                    ============================================================
+                    O <form> define um formulário HTML para recolha de 
+                    dados do utilizador.
+                    
+                    Atributos:
+                    - novalidate: desativa a validação HTML5 nativa 
+                      (a validação será feita por JavaScript)
+                    - aria-label: descrição acessível do formulário
+                    ============================================================
+                -->
                 <form id="formulario" novalidate aria-label="Formulário de participação">
 
+                    <!-- 
+                        ============================================================
+                        GRUPO DE FORMULÁRIO (Campo Nome)
+                        ============================================================
+                        Cada .form-group agrupa uma label e um input.
+                        ============================================================
+                    -->
                     <div class="form-group">
                         <label for="nome">
+                            <!-- 
+                                ============================================================
+                                <label> (RÓTULO)
+                                ============================================================
+                                O <label> associa um texto descritivo a um 
+                                campo do formulário.
+                                for="nome": associa ao input com id="nome"
+                                
+                                Clicar no label foca o campo automaticamente.
+                                ============================================================
+                            -->
                             <i class="fa-solid fa-user" aria-hidden="true"></i>
                             Nome Completo
                         </label>
@@ -631,8 +1295,29 @@
                                autocomplete="name"
                                required
                                aria-required="true">
+                        <!-- 
+                            ============================================================
+                            <input> (CAMPO DE ENTRADA)
+                            ============================================================
+                            Atributos importantes:
+                            - type="text": campo de texto simples
+                            - id="nome": identificador único (usado pelo label)
+                            - name="nome": nome do campo (enviado no form)
+                            - placeholder: texto de exemplo dentro do campo
+                            - autocomplete="name": sugere preenchimento 
+                              automático com nome do utilizador
+                            - required: campo obrigatório
+                            - aria-required="true": indica acessibilidade 
+                              que o campo é obrigatório
+                            ============================================================
+                        -->
                     </div>
 
+                    <!-- 
+                        ============================================================
+                        GRUPO DE FORMULÁRIO (Campo Email)
+                        ============================================================
+                    -->
                     <div class="form-group">
                         <label for="email">
                             <i class="fa-solid fa-envelope" aria-hidden="true"></i>
@@ -643,14 +1328,35 @@
                                autocomplete="email"
                                required
                                aria-required="true">
+                        <!-- 
+                            type="email": valida automaticamente se o 
+                            formato é um email válido (ex: texto@dominio.com)
+                        -->
                     </div>
 
+                    <!-- 
+                        ============================================================
+                        GRUPO DE FORMULÁRIO (Campo Província - Select)
+                        ============================================================
+                        <select> cria uma lista suspensa (dropdown).
+                        ============================================================
+                    -->
                     <div class="form-group">
                         <label for="provincia">
                             <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
                             Província
                         </label>
                         <select id="provincia" name="provincia" aria-label="Seleccione a sua província">
+                            <!-- 
+                                ============================================================
+                                <option> (OPÇÃO)
+                                ============================================================
+                                Cada <option> define uma opção no dropdown.
+                                value: valor enviado no formulário.
+                                disabled: opção não selecionável.
+                                selected: opção selecionada por padrão.
+                                ============================================================
+                            -->
                             <option value="" disabled selected>Seleccione a sua província</option>
                             <option>Luanda</option>
                             <option>Huíla</option>
@@ -664,6 +1370,11 @@
                         </select>
                     </div>
 
+                    <!-- 
+                        ============================================================
+                        GRUPO DE FORMULÁRIO (Campo Categoria Favorita)
+                        ============================================================
+                    -->
                     <div class="form-group">
                         <label for="categoria">
                             <i class="fa-solid fa-star" aria-hidden="true"></i>
@@ -678,6 +1389,13 @@
                         </select>
                     </div>
 
+                    <!-- 
+                        ============================================================
+                        GRUPO DE FORMULÁRIO (Campo Mensagem - Textarea)
+                        ============================================================
+                        <textarea> cria uma área de texto com múltiplas linhas.
+                        ============================================================
+                    -->
                     <div class="form-group">
                         <label for="mensagem">
                             <i class="fa-solid fa-comment" aria-hidden="true"></i>
@@ -687,8 +1405,20 @@
                                   placeholder="Partilhe os seus pensamentos sobre Angola..."
                                   rows="4"
                                   aria-label="Mensagem opcional"></textarea>
+                        <!-- 
+                            rows="4": define a altura do textarea em 4 linhas.
+                        -->
                     </div>
 
+                    <!-- 
+                        ============================================================
+                        BOTÃO DE SUBMISSÃO
+                        ============================================================
+                        type="submit": quando clicado, tenta submeter o 
+                        formulário (mas o novalidate e o JavaScript 
+                        controlam o processo).
+                        ============================================================
+                    -->
                     <button type="submit" class="btn-submit">
                         <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
                         Enviar Participação
@@ -696,19 +1426,49 @@
 
                 </form>
 
+                <!-- 
+                    ============================================================
+                    FEEDBACK DO FORMULÁRIO
+                    ============================================================
+                    <div> que mostra mensagens de sucesso ou erro após 
+                    a submissão do formulário.
+                    
+                    role="alert": avisa leitores de tela sobre conteúdo 
+                    dinâmico importante.
+                    aria-live="polite": atualizações são anunciadas, 
+                    mas não interrompem a leitura atual.
+                    ============================================================
+                -->
                 <div id="feedback" class="feedback" role="alert" aria-live="polite"></div>
             </div>
 
         </section>
+        <!-- FIM DA SECÇÃO PARTICIPAÇÃO -->
 
     </main>
+    <!-- FIM DO CONTEÚDO PRINCIPAL -->
 
-    <!-- ===================== RODAPÉ ===================== -->
+    <!-- 
+        ============================================================
+        RODAPÉ (FOOTER)
+        ============================================================
+        A tag <footer> define o rodapé da página. Contém informações 
+        de copyright, links úteis e créditos.
+        ============================================================
+    -->
     <footer>
 
         <div class="footer-inner">
+            <!-- 
+                ============================================================
+                CONTEÚDO INTERNO DO RODAPÉ
+                ============================================================
+            -->
 
             <div class="footer-brand">
+                <!-- 
+                    Marca do rodapé com sigla "AO" e texto descritivo.
+                -->
                 <span class="footer-ao">AO</span>
                 <div>
                     <strong>Angola — Uma Nação, Muitas Dimensões</strong>
@@ -717,6 +1477,9 @@
             </div>
 
             <div class="footer-links">
+                <!-- 
+                    Links de navegação rápidos no rodapé.
+                -->
                 <a href="#cultura">Cultura</a>
                 <a href="#turismo">Turismo</a>
                 <a href="#economia">Economia</a>
@@ -733,20 +1496,49 @@
         </div>
 
         <div class="footer-copy">
+            <!-- 
+                ============================================================
+                COPYRIGHT E CRÉDITOS
+                ============================================================
+                &copy; é a entidade HTML para o símbolo de copyright.
+                &nbsp; é um espaço que não quebra (non-breaking space).
+                ============================================================
+            -->
             <p>
                 Projecto desenvolvido em HTML5, CSS3 e JavaScript &nbsp;|&nbsp;
                 &copy; 2026 &nbsp;·&nbsp; Filomena De Freitas
                 &nbsp;·&nbsp; Universidade Mandume Ya Ndemufayo
             </p>
             <a href="#topo" class="back-to-top" aria-label="Voltar ao topo">
+                <!-- 
+                    Link que volta ao topo da página (âncora #topo).
+                -->
                 <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
             </a>
         </div>
 
     </footer>
+    <!-- FIM DO RODAPÉ -->
 
-    <!-- JavaScript -->
+    <!-- 
+        ============================================================
+        JAVASCRIPT
+        ============================================================
+        <script> carrega um ficheiro JavaScript externo.
+        O JS adiciona interatividade à página: toggle de conteúdo, 
+        alternância de tema, menu mobile, validação de formulário, 
+        navegação suave, etc.
+        ============================================================
+    -->
     <script src="script.js"></script>
+    <!-- 
+        O ficheiro script.js deve estar na mesma pasta que o HTML.
+        Nele estão todas as funções JavaScript que tornam a página 
+        interativa.
+    -->
 
 </body>
+<!-- FIM DO CORPO DO DOCUMENTO -->
+
 </html>
+<!-- FIM DO DOCUMENTO HTML -->
